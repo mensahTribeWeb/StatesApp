@@ -1,8 +1,17 @@
 {
   "cSpell.words": [
+    "isequal",
     "Massachusettes",
     "Moines",
     "Pennslyvania",
     "Tallahasse"
-  ]
+  ],
+  "cSpell.customDictionaries": {
+    "custom-dictionary-workspace": {
+      "name": "custom-dictionary-workspace",
+      "path": "${workspaceFolder:StatesApp}/.cspell/custom-dictionary-workspace.txt",
+      "addWords": true,
+      "scope": "workspace"
+    }
+  }
 }
