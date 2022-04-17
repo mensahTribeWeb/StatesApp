@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 
 public class BubbuleSort extends StatesApp{
     public static void bubbleSort(String[][] str){
@@ -12,7 +11,7 @@ public class BubbuleSort extends StatesApp{
           //we will traverse and compare the 1st index because of[capitals]
           // compare returns a negative, positive, 0 based lexical value
           
-          if(((statesAndCapitals[j][1]).compareTo(statesAndCapitals[j + 1]))>0){
+          if(((statesAndCapitals[j][1]).compareTo(statesAndCapitals[j + 1][1]))>0){
             temp = statesAndCapitals[j + 1];
             statesAndCapitals[j + 1] = statesAndCapitals[j];
             statesAndCapitals[j] = temp;
