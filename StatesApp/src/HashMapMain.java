@@ -1,42 +1,60 @@
+/**
+ * Hash Map 
+ * Collection of key(k), value(v) pairs call entry
+ *  Runtime complexity: Best Case O(1)
+ *  Worst Case O(n)
+ * 
+ * */
+
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.TreeMap;
 
 public class HashMapMain extends BinarySearchTree {
   public static void main(String[] args){
+    //Declaration of the a HashTable
+    // Key value pairs
+    //Dynamically expands
     HashMap<String, String> hMap = new HashMap<>();
     String[][] statesAndCapitals = getStatesCapitalData();
     
-    //bST for binarySearchTree removes chances of error
+    //bST variable for binarySearchTree removes chances of error
+    //binary search tree for storage
     BinarySearchTree bST =new BinarySearchTree();
 
+    //add key value pairs using the .put() method
     for(int i = 0; i < statesAndCapitals.length; i++ ) {
       hMap.put(statesAndCapitals[i][0], statesAndCapitals[i][1]);
     }
-    System.out.println("State and Capital before Map sort:");
+
+    // Display the content of the Map
+    System.out.println("Content of the Map:\n");
+    // Place keys into set and iterate over the set
     for(String kv : hMap.keySet()) {
       bST.insert(kv, hMap.get(kv));
-      System.out.println("States: " + kv + " Capital : " + hMap.get(kv));
+      System.out.println("States: " + kv + "\t " + "Capital: " + hMap.get(kv));
     }
 
       TreeMap<String, String> treeMap = new TreeMap<>();
       treeMap.putAll(hMap);
+
       //search section
       Scanner scan = new Scanner(System.in);
+
       String state = "";
+      String invalidResponse = state + " does not exist. Please Enter a Valid State.";
+
+      System.out.print("\n Please Enter a State: ");
       state = scan.nextLine();
       Node searchedElement =  bST.search(bST.root, state);
       
-      String invalidResponse = state + " does not exist. Please Enter a Valid State.";
       
-      try {
+      
       if(searchedElement != null) {
         System.out.println("The capital of " + state + " is:\n" + searchedElement.value);
       }else{
         System.out.println(invalidResponse);}
-      }catch (Exception e) {
-        System.out.println(invalidResponse);
-      }
+     
       scan.close();
       }
     

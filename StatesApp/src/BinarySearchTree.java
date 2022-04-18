@@ -1,4 +1,11 @@
-public class BinarySearchTree {
+/**
+ * Binary Tree 
+ * Tree where no node has more than two children
+ *  Runtime complexity: Best Case O(1)
+ *  Worst Case O(n)
+ * 
+ * */
+public class BinarySearchTree extends StatesApp {
  class Node { 
    //Node object leftChild rightChild
    // key and value pairs
@@ -16,12 +23,13 @@ public class BinarySearchTree {
  
  Node root; //Declares the root of our tree
 
- BinarySearchTree(){
+ public BinarySearchTree(){
    root = null;
  }
 
- //implement the inserts Methods
- void insert(String key, String value) {
+ //implement the inserts Methods a helper method
+ // use this helper method because we will use recursion
+public void insert(String key, String value) {
    root = insertRec(root, key, value);
  }
  
@@ -33,21 +41,26 @@ public class BinarySearchTree {
    }
    //conditions to in the key values should go in the sub tree
    
-     if ((key.compareToIgnoreCase(root.key))<0){
+    if ((key.compareToIgnoreCase(root.key))<0){
        root.left = insertRec(root.left, key, value);
-     }else if ((key.compareToIgnoreCase(root.key))<0){
+     }
+    else if ((key.compareToIgnoreCase(root.key))>=0){
        root.right = insertRec(root.right, key, value);
      }
      return root;
      
    }
    
-   public static Node search(Node root, String key) {
-     if ((root == null || root.key.equalsIgnoreCase(key))){
+   public Node search(Node root, String key) {
+
+     if ((root == null || root.key.equalsIgnoreCase(key)))
        return search(root.left, key);
-     }
-  return search(root.right, key);
-    } 
+     
+      if (( root.key.compareTo(key))>0)
+       return search(root.left, key);
+     
+      return search(root.right,key);
+    }
 }
 
 
