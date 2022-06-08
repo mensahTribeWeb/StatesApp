@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.TreeMap;
 
-public class HashMapMain extends BinarySearchTree {
+public class HashMapMain extends binarySearchTree {
   public static void main(String[] args){
     //Declaration of the a HashTable
     // Key value pairs
@@ -20,7 +20,7 @@ public class HashMapMain extends BinarySearchTree {
     
     //bST variable for binarySearchTree removes chances of error
     //binary search tree for storage
-    BinarySearchTree bST =new BinarySearchTree();
+    TreeMap<String,String> bST = new TreeMap<>();
 
     //add key value pairs using the .put() method
     for(int i = 0; i < statesAndCapitals.length; i++ ) {
@@ -47,13 +47,9 @@ public class HashMapMain extends BinarySearchTree {
       System.out.print("\n Please Enter a State: ");
       state = scan.nextLine();
       Node searchedElement =  bST.search(bST.root, state);
-      
-      
-      
-      if(searchedElement != null) {
-        System.out.println("The capital of " + state + " is:\n" + searchedElement.value);
-      }else{
-        System.out.println(invalidResponse);}
+        if(searchedElement != null) {
+        System.out.println("The capital of " + state + " is:" + searchedElement.value);
+      }else{System.out.println(invalidResponse);}
      
       scan.close();
       }

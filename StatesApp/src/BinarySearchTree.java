@@ -5,13 +5,14 @@
  *  Worst Case O(n)
  * 
  * */
-public class BinarySearchTree extends StatesApp {
- class Node { 
+ class binarySearchTree extends StatesApp {
+ public class Node { 
    //Node object leftChild rightChild
-   // key and value pairs
+   // key: States(String)  value: Capitals(String)
    String key;
    String value;
-   Node left, right;
+   Node left;
+   Node right;
 
    public Node(String key, String value){ 
      //constructor to initialize a node and a value
@@ -22,14 +23,15 @@ public class BinarySearchTree extends StatesApp {
  }
  
  Node root; //Declares the root of our tree
-
- public BinarySearchTree(){
+ 
+ 
+ public binarySearchTree() {
    root = null;
  }
 
  //implement the inserts Methods a helper method
  // use this helper method because we will use recursion
-public void insert(String key, String value) {
+ void insert(String key, String value) {
    root = insertRec(root, key, value);
  }
  
@@ -41,26 +43,21 @@ public void insert(String key, String value) {
    }
    //conditions to in the key values should go in the sub tree
    
-    if ((key.compareToIgnoreCase(root.key))<0){
-       root.left = insertRec(root.left, key, value);
-     }
-    else if ((key.compareToIgnoreCase(root.key))>=0){
-       root.right = insertRec(root.right, key, value);
-     }
-     return root;
-     
-   }
-   
-   public Node search(Node root, String key) {
-
-     if ((root == null || root.key.equalsIgnoreCase(key)))
-       return search(root.left, key);
-     
-      if (( root.key.compareTo(key))>0)
-       return search(root.left, key);
-     
-      return search(root.right,key);
-    }
+    if ((key.compareToIgnoreCase(root.key)) < 0)
+     root.left = insertRec(root.left, key, value);
+    else if ((key.compareToIgnoreCase(root.key)) >= 0)
+      root.right = insertRec(root.right, key, value);
+    return root;
+  }
+    
+    public Node search(Node root, String key) {
+  
+     if ((root == null || root.key.equalsIgnoreCase(key))){return search(root.left, key);}
+      
+      else if (( root.key.compareTo(key)) > 0){return search(root.left, key);}
+      
+     else{return search(root.right, key);}
+     }    
 }
 
 
