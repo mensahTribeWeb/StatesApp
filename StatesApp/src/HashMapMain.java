@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.TreeMap;
 
-public class HashMapMain extends binarySearchTree {
+public class HashMapMain extends binarySearchTree  {
   public static void main(String[] args){
     //Declaration of the a HashTable
     // Key value pairs
@@ -20,7 +20,7 @@ public class HashMapMain extends binarySearchTree {
     
     //bST variable for binarySearchTree removes chances of error
     //binary search tree for storage
-    TreeMap<String,String> bST = new TreeMap<>();
+  binarySearchTree bST = new binarySearchTree();
 
     //add key value pairs using the .put() method
     for(int i = 0; i < statesAndCapitals.length; i++ ) {
@@ -46,70 +46,68 @@ public class HashMapMain extends binarySearchTree {
 
       System.out.print("\n Please Enter a State: ");
       state = scan.nextLine();
-      Node searchedElement =  bST.search(bST.root, state);
+      binarySearchTree.Node searchedElement =  bST.search(bST.root, state);
         if(searchedElement != null) {
-        System.out.println("The capital of " + state + " is:" + searchedElement.value);
+        System.out.println("The capital of " + state + " is: " + ((binarySearchTree.Node) searchedElement).value);
       }else{System.out.println(invalidResponse);}
      
       scan.close();
       }
-    
-      
-  
+
   public static String[][] getStatesCapitalData(){
     String[][] s = {
-      {"alabama", "montgomery"},
-      {"alaska", "juneau"},
-      {"arizona", "phoenix"},
-      {"arkansas", "little rock"},
-      {"california", "sacramento"},
-      {"colorado", "denver"},
-      {"connecticut", "hartford"},
-     {"delaware", "dover"},
-     {"florida", "tallahasse"},
-     {"georgia", "atlanta"},
-     {"hawaii", "honolulu"},
-     {"idaho", "boise"},
-     {"illinois", "springfield"},
-     {"indiana", "indianapolis"},
-     {"iowa", "des moines"},
-     {"kansas", "topeka"},
-     {"kentucky", "frankfort"},
-     {"louisiana", "baton rouge"},
-     {"maine", "augusta"},
-     {"maryland", "annapolis"},
-     {"massachusettes", "boston"},
-     {"michigan", "lansing"},
-     {"minnesota", "saint paul"},
-     {"mississippi", "jackson"},
-     {"missouri", "jefferson city"},
-     {"montana", "helena"},
-     {"nebraska", "lincoln"},
-     {"nevada", "carson city"},
-     {"new hampshire", "concord"},
-     {"new jersey", "trenton"},
-     {"new york", "albany"},
-     {"new mexico", "santa fe"},
-     {"north carolina", "raleigh"},
-     {"north dakota", "bismark"},
-     {"ohio", "columbus"},
-     {"oklahoma", "oklahoma city"},
-     {"oregon", "salem"},
-     {"pennslyvania", "harrisburg"},
-     {"rhode island", "providence"},
-     {"south carolina", "columbia"},
-     {"south dakota", "pierre"},
-     {"tennessee", "nashville"},
-     {"texas", "austin"},
-     {"utah", "salt lake city"},
-     {"vermont", "montpelier"},
-     {"virginia", "richmond"},
-     {"washington", "olympia"},
-     {"west virginia", "charleston"},
-     {"wisconsin", "madison"},
-     {"wyoming", "cheyenne"}};
- return s;
-}
+            {"alabama", "montgomery"},
+            {"alaska", "juneau"},
+            {"arizona", "phoenix"},
+            {"arkansas", "little rock"},
+            {"california", "sacramento"},
+            {"colorado", "denver"},
+            {"connecticut", "hartford"},
+            {"delaware", "dover"},
+            {"florida", "tallahasse"},
+            {"georgia", "atlanta"},
+            {"hawaii", "honolulu"},
+            {"idaho", "boise"},
+            {"illinois", "springfield"},
+            {"indiana", "indianapolis"},
+            {"iowa", "des moines"},
+            {"kansas", "topeka"},
+            {"kentucky", "frankfort"},
+            {"louisiana", "baton rouge"},
+            {"maine", "augusta"},
+            {"maryland", "annapolis"},
+            {"massachusettes", "boston"},
+            {"michigan", "lansing"},
+            {"minnesota", "saint paul"},
+            {"mississippi", "jackson"},
+            {"missouri", "jefferson city"},
+            {"montana", "helena"},
+            {"nebraska", "lincoln"},
+            {"nevada", "carson city"},
+            {"new hampshire", "concord"},
+            {"new jersey", "trenton"},
+            {"new york", "albany"},
+            {"new mexico", "santa fe"},
+            {"north carolina", "raleigh"},
+            {"north dakota", "bismark"},
+            {"ohio", "columbus"},
+            {"oklahoma", "oklahoma city"},
+            {"oregon", "salem"},
+            {"pennslyvania", "harrisburg"},
+            {"rhode island", "providence"},
+            {"south carolina", "columbia"},
+            {"south dakota", "pierre"},
+            {"tennessee", "nashville"},
+            {"texas", "austin"},
+            {"utah", "salt lake city"},
+            {"vermont", "montpelier"},
+            {"virginia", "richmond"},
+            {"washington", "olympia"},
+            {"west virginia", "charleston"},
+            {"wisconsin", "madison"},
+            {"wyoming", "cheyenne"}};
+    return s;
+  }
 }  
 
   

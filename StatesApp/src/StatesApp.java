@@ -8,7 +8,8 @@ public class StatesApp {
     public static void main(String[] args) throws Exception {
         
         String[][] statesAndCapitals = getStatesCapitalData();
-        //ask user to enter capital using a and Traverse the [][]Array,then return a state from getStatesAndCapitalData() 
+        //ask user to enter capital using a and Traverse the [][]Array,
+        // then return a state from getStatesAndCapitalData()
         
         System.out.println("Lets play a game!");
         
@@ -50,7 +51,7 @@ public class StatesApp {
             System.out.println("\n WOW! you scored" + score + "/50");
         }else{System.out.println("\n Please Study,  you scored " + score + "/50");}
         
-        for(int i = 0; i<totalSC-1; i++){
+        for(int i = 0; i<totalSC-1  ; i++){
             System.out.println();
             for(int j = 0; j < totalSC-1; j++){
                 System.out.print(statesAndCapitals[i][j]);

@@ -1,28 +1,29 @@
 /**
  * Binary Tree 
  * Tree where no node has more than two children
- *  Runtime complexity: Best Case O(1)
- *  Worst Case O(n)
+ *  Runtime complexity: worst Case O(n)
+ *  bestCase O(logn)
  * 
  * */
- class binarySearchTree extends StatesApp {
+ class binarySearchTree  {
  public class Node { 
    //Node object leftChild rightChild
    // key: States(String)  value: Capitals(String)
+     //
    String key;
    String value;
-   Node left;
-   Node right;
+   Node left, right;
 
    public Node(String key, String value){ 
      //constructor to initialize a node and a value
      this.key = key;
      this.value = value;
-     left = right = null;
+     left = null;
+     right = null;
    }
  }
  
- Node root; //Declares the root of our tree
+ static Node root; //Declares the root of our tree
  
  
  public binarySearchTree() {
@@ -37,7 +38,7 @@
  
  Node insertRec(Node root, String key, String value) {
    //implements conditions for an empty Node
-   if(root == null) {
+   if (root == null) {
      root = new Node(key, value);
      return root;
    }
@@ -52,12 +53,13 @@
     
     public Node search(Node root, String key) {
   
-     if ((root == null || root.key.equalsIgnoreCase(key))){return search(root.left, key);}
+     if (root == null || root.key.equalsIgnoreCase(key)){return root;}
       
-      else if (( root.key.compareTo(key)) > 0){return search(root.left, key);}
-      
-     else{return search(root.right, key);}
-     }    
+     if ( root.key.compareTo(key) > 0){return search(root.left, key);}
+
+
+     return search(root.right, key);
+     }
 }
 
 
